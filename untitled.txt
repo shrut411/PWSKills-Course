@@ -1,0 +1,65 @@
+Assignment 
+Q1. Create one variable containing following type of data: 
+(i) string 
+ANS: x = ‘shrut’
+(ii) list
+ANS: FRUITS = [“apple”, “banana”, “mango”]
+(iii) float 
+ANS: x = 2.33
+(iv) tuple
+ANS: x = (1,2,’mango’,5,’guava’)
+
+
+Q2. Given are some following variables containing data: 
+(i) var1 = ‘ ‘ 
+(ii) var2 = ‘[ DS , ML , Python]’ 
+(iii) var3 = [ ‘DS’ , ’ML’ , ‘Python’ ] 
+(iv) var4 = 1. 
+What will be the data type of the above given variable.
+(i)String
+(ii)String
+(iii)List
+(iv)Integer
+
+
+Q3. Explain the use of the following operators using an example: 
+(i) /  : It is used to divide an integer by another. Ex: 4/2 = 2
+(ii) %  : Modulus operator is used to find the remainder when two integers are divided. Ex: 5%2 = 1
+(iii) //  : Floor division is used to round the result of the division to a whole number. Ex: 11/2 = 5
+(iv) ** : Used to raise any integer with a power. Ex: 2**2 = 4
+
+
+Q4. Create a list of length 10 of your choice containing multiple types of data. Using a for loop print the  element and its data type. 
+ANS: 
+
+LIST = ['mango','banana',5,6,7,'car']
+for i in LIST: 
+    	print(i)
+   	 print(type(i))
+
+
+Q5. Using a while loop, verify if the number A is purely divisible by number B and if so then how many  times it can be divisible. 
+
+A = int(input("Enter a number:"))
+B = int(input("Enter another number:"))
+count = 0
+while A%B == 0:
+    count += 1
+    print(count)
+    break
+
+
+Q6. Create a list containing 25 int type data. Using for loop and if-else condition print if the element is  divisible by 3 or not. 
+
+LIST = (25,66,99,89,101,23,45,56,78,999,1000,9999,230,450,650,123,321,45,698,78,3,6,8)
+for i in LIST:
+    if i%3 == 0:
+        print(i,"is divisible by 3")
+    else:
+        print(i,"is not divisible by 3")
+        
+        
+Q7. What do you understand about mutable and immutable data types? Give examples for both showing  this property. 
+
+ANS: Immutable Data Types are inbuilt data types of python like int, float, string, tuple etc. We cannot change them but they are easy to access. Whereas, Mutable Data Types are those in which we could add or remove elements. Examples of Mutable Data Types in python are List, Dictionary(dict), set etc.
+Note:  Create your assignment in Jupyter notebook and upload it to GitHub & share that github repository  link through your dashboard. Make sure the repository is public.
