@@ -1,0 +1,152 @@
+'Q1. What is a database? Differentiate between SQL and NoSQL databases.'
+'A database is an organized collection of data, generally stored and accessed electronically 
+from a computer system. Databases are designed to manage, store, and retrieve large amounts of information easily.'
+
+SQL Databases:
+
+Structure: Relational databases with a predefined schema (table structure).
+Query Language: SQL (Structured Query Language).
+Scalability: Vertical scaling (adding more power to an existing machine).
+Transactions: Support for ACID (Atomicity, Consistency, Isolation, Durability) properties, ensuring reliable transactions.
+Examples: MySQL, PostgreSQL, Oracle, SQL Server.
+
+
+NoSQL Databases:
+
+Structure: Non-relational, often schema-less; can store data in various forms like key-value pairs, documents, wide-columns, or graphs.
+Query Language: Various, depending on the type (e.g., MongoDB uses JSON-like queries).
+Scalability: Horizontal scaling (adding more machines to the pool).
+Transactions: Often support eventual consistency, though some can support ACID.
+Examples: MongoDB, Cassandra, Redis, Neo4j.
+
+
+
+
+
+
+
+Q2. What is DDL? Explain why CREATE, DROP, ALTER, and TRUNCATE are used with an example.
+
+DDL (Data Definition Language) includes SQL commands used to define the database structure or schema.
+
+CREATE: Used to create a new table, database, index, or view.
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Position VARCHAR(100)
+);
+
+
+DROP: Used to delete objects like tables, databases, or views
+DROP TABLE Employees;
+
+
+ALTER: Used to modify an existing database object, like adding or removing columns from a table.
+ALTER TABLE Employees ADD COLUMN Salary DECIMAL(10, 2);
+
+
+TRUNCATE: Removes all rows from a table, but the table structure remains.
+TRUNCATE TABLE Employees;
+
+
+
+
+
+
+Q3. What is DML? Explain INSERT, UPDATE, and DELETE with an example.
+DML (Data Manipulation Language) includes SQL commands used to manipulate data stored in the database.
+
+INSERT: Adds new rows to a table.
+INSERT INTO Employees (ID, Name, Position) VALUES (1, 'John Doe', 'Developer');
+
+
+UPDATE: Modifies existing rows in a table
+UPDATE Employees SET Position = 'Senior Developer' WHERE ID = 1;
+
+
+DELETE: Removes existing rows from a table.
+DELETE FROM Employees WHERE ID = 1;
+
+
+
+
+
+
+Q4. What is DQL? Explain SELECT with an example.
+DQL (Data Query Language) is used to query the database and retrieve data.
+
+SELECT: Used to retrieve data from one or more tables.
+SELECT Name, Position FROM Employees WHERE ID = 1;
+
+
+
+
+
+
+Q5. Explain Primary Key and Foreign Key.
+
+Primary Key: A column (or combination of columns) in a table that uniquely identifies each row. Each table can have only one primary key, and it cannot contain NULL values.
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(100)
+);
+
+
+Foreign Key: A column (or combination of columns) that establishes a link between data in two tables. It refers to the primary key in another table, ensuring referential integrity.
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    EmployeeID INT,
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(ID)
+);
+
+
+
+
+
+
+Q6. Write a python code to connect MySQL to python. Explain the cursor() and execute() method.
+
+'import mysql.connector
+
+# Establish the connection
+conn = mysql.connector.connect(
+    host="localhost",
+    user="yourusername",
+    password="yourpassword",
+    database="yourdatabase"
+)
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Execute a query
+cursor.execute("SELECT * FROM Employees")
+
+# Fetch and print the results
+for row in cursor.fetchall():
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()'
+
+cursor(): Creates a cursor object which is used to execute SQL queries and fetch data from the database.
+execute(query): Executes the SQL query passed to it.
+
+
+
+
+
+
+Q7. Give the order of execution of SQL clauses in an SQL query.
+The order of execution of SQL clauses is as follows:
+
+FROM (including JOINs)
+WHERE
+GROUP BY
+HAVING
+SELECT
+DISTINCT
+ORDER BY
+LIMIT (or TOP, depending on the SQL dialect)
+This order ensures that SQL queries are processed logically, starting with the source data, filtering, grouping, and finally projecting the desired columns.
