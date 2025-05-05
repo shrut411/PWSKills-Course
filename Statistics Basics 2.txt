@@ -1,0 +1,71 @@
+Q1. What are the three measures of central tendency?
+
+The three measures of central tendency are mean (average), median (middle value when ordered), and mode (most frequent value).
+
+Q2. What is the difference between the mean, median, and mode? How are they used to measure the central tendency of a dataset?
+
+Mean: Sum of all values divided by the number of values; it represents the average.
+Median: Middle value when data is ordered; it splits the dataset into two equal halves.
+Mode: Most frequent value; it shows the most common value.
+They measure central tendency by summarizing the dataset’s center in different ways: mean is sensitive to all values, median is robust to outliers, and mode highlights frequency.
+Q3. Measure the three measures of central tendency for the given height data: [178,177,176,177,178.2,178,175,179,180,175,178.9,176.2,177,172.5,178,176.5]
+
+Data: [172.5, 175, 175, 176, 176.2, 176.5, 177, 177, 177, 178, 178, 178, 178.2, 178.9, 179, 180] (sorted).
+
+Mean: Sum = 2845.3, count = 16, so mean = 2845.3 / 16 = 177.83125 ≈ 177.83.
+Median: Middle values (8th and 9th) are 177 and 177, so median = (177 + 177) / 2 = 177.
+Mode: 178 appears 4 times, the most frequent, so mode = 178.
+Q4. Find the standard deviation for the given data: [178,177,176,177,178.2,178,175,179,180,175,178.9,176.2,177,172.5,178,176.5]
+
+Mean = 177.83 (from Q3).
+Variance:
+Differences from mean: (178-177.83)², (177-177.83)², ..., (176.5-177.83)².
+Values: 0.0289, 0.6889, 3.3489, 0.6889, 0.1344, 0.0289, 7.7289, 1.3689, 4.7089, 7.7289, 1.1449, 2.5289, 0.6889, 28.4089, 0.0289, 1.8489.
+Sum of squares = 61.035, variance = 61.035 / 16 = 3.8146875.
+Standard deviation = √3.8146875 ≈ 1.953.
+Q5. How are measures of dispersion such as range, variance, and standard deviation used to describe the spread of a dataset? Provide an example.
+
+Range: Difference between max and min; shows total spread.
+Variance: Average of squared deviations from the mean; measures spread around the mean.
+Standard deviation: Square root of variance; indicates typical deviation from the mean.
+Example: Dataset [1, 2, 3, 4, 5]. Range = 5 - 1 = 4, mean = 3, variance = [(1-3)² + (2-3)² + ... + (5-3)²] / 5 = 2, standard deviation = √2 ≈ 1.41.
+Q6. What is a Venn diagram?
+
+A Venn diagram is a visual representation of sets using overlapping circles to show relationships like union, intersection, and differences between sets.
+
+Q7. For the two given sets A = (2,3,4,5,6,7) & B = (0,2,6,8,10), find:
+
+(i) A ∩ B: Intersection (common elements) = {2, 6}.
+(ii) A ∪ B: Union (all elements) = {0, 2, 3, 4, 5, 6, 7, 8, 10}.
+Q8. What do you understand about skewness in data?
+
+Skewness describes the asymmetry of a dataset’s distribution. Positive (right) skew has a longer right tail (e.g., income distributions), negative (left) skew has a longer left tail (e.g., age at death), and zero skew is symmetric (e.g., normal distribution).
+
+Q9. If a data is right skewed then what will be the position of median with respect to mean?
+
+In right-skewed data, the mean is greater than the median because the mean is pulled toward the longer right tail.
+
+Q10. Explain the difference between covariance and correlation. How are these measures used in statistical analysis?
+
+Covariance: Measures how two variables vary together; positive if they increase together, negative if one increases as the other decreases.
+Correlation: Standardized covariance (between -1 and 1); measures the strength and direction of a linear relationship.
+In statistical analysis, covariance identifies the direction of the relationship, while correlation quantifies its strength and is used to assess linear dependency.
+Q11. What is the formula for calculating the sample mean? Provide an example calculation for a dataset.
+
+Formula: Sample mean = (sum of all values) / (number of values).
+
+Example: Dataset [4, 8, 6, 5]. Sum = 23, count = 4, mean = 23 / 4 = 5.75.
+
+Q12. For a normal distribution data what is the relationship between its measure of central tendency?
+
+In a normal distribution, the mean, median, and mode are equal and located at the center of the symmetric bell curve.
+
+Q13. How do covariance and correlation differ from dispersion?
+
+Covariance and correlation measure the relationship between two variables (direction and strength, respectively), while dispersion (e.g., variance, standard deviation) measures the spread of a single variable around its mean.
+
+Q14. How do outliers affect the measures of central tendency and dispersion? Provide an example.
+
+Outliers heavily affect the mean (pulls it toward the outlier) and dispersion measures like range and standard deviation (increases them), but the median is more robust.
+
+Example: Dataset [1, 2, 3, 4, 100]. Mean = 22, median = 3, range = 99, standard deviation ≈ 43.7. Without 100, mean = 2.5, median = 2.5, range = 3, standard deviation ≈ 1.3.
