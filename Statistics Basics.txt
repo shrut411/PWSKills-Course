@@ -1,0 +1,49 @@
+Q1. What is Statistics?
+Statistics is the branch of mathematics that deals with collecting, analyzing, interpreting, and presenting data. It helps in decision-making and finding trends or patterns in data.
+
+Q2. Define the different types of statistics and give an example of when each type might be used.
+
+1. Descriptive Statistics – Summarizes data (e.g., mean, median, mode, charts).
+   Example: Calculating the average test score of students in a class.
+2. Inferential Statistics – Makes predictions or inferences about a population based on a sample.
+   Example: Predicting election results based on a survey of 1,000 voters.
+
+Q3. What are the different types of data and how do they differ from each other? Provide an example.
+
+1. Qualitative (Categorical): Non-numeric, describes characteristics (e.g., gender, color).
+   Example: Eye color – brown, blue, green.
+2. Quantitative (Numerical): Numeric data (e.g., age, height).
+   Example: Age – 21, 35, 40.
+
+Q4. Categorise the datasets as quantitative or qualitative:
+(i) Grading in exam: A+, A, B+, B, C+, C, D, E → Qualitative (Ordinal)
+(ii) Colour of mangoes: yellow, green, orange, red → Qualitative (Nominal)
+(iii) Height data of a class: \[178.9, 179, ...] → Quantitative (Continuous)
+(iv) Number of mangoes exported: \[500, 600, 478, ...] → Quantitative (Discrete)
+
+Q5. Explain levels of measurement and example of variable for each:
+
+1. Nominal – Names/labels (e.g., Gender: Male/Female)
+2. Ordinal – Order matters, but not exact difference (e.g., Satisfaction: High, Medium, Low)
+3. Interval – Ordered with equal intervals, but no true zero (e.g., Temperature in Celsius)
+4. Ratio – Like interval, but has true zero (e.g., Weight, Height)
+
+Q6. Why is understanding level of measurement important?
+Because it determines the type of statistical tests and visualizations that are valid.
+Example: You cannot compute the mean of a nominal variable like "Eye Color".
+
+Q7. How nominal data is different from ordinal data?
+Nominal: No order (e.g., Colors: Red, Blue)
+Ordinal: Has order but no fixed difference (e.g., Class Rank: 1st, 2nd, 3rd)
+
+Q8. Which plot can display data in terms of range?
+Box Plot (Box-and-Whisker Plot) – Shows minimum, Q1, median, Q3, and maximum.
+
+Q9. Difference between descriptive and inferential statistics:
+Descriptive: Describes/summarizes data (e.g., average score of class)
+Inferential: Makes predictions from data (e.g., predicting population behavior from a sample)
+
+Q10. Measures of central tendency and variability:
+Central Tendency: Mean, Median, Mode – represent typical value.
+Variability: Range, Variance, Standard Deviation – show how spread out data is.
+Example: A small standard deviation means data is closely clustered around the mean.
