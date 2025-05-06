@@ -1,0 +1,76 @@
+
+**Q1: What are missing values in a dataset? Why is it essential to handle missing values? Name some algorithms that are not affected by missing values.**
+Missing values occur when no data value is stored for a variable. It's essential to handle them because they can lead to inaccurate model training and bias. Algorithms like Decision Trees and XGBoost can handle missing values internally.
+
+**Q2: List down techniques used to handle missing data. Give an example of each with Python code.**
+
+* **Removal:** `df.dropna()`
+* **Mean/Median/Mode Imputation:**
+
+  ```python
+  df['age'].fillna(df['age'].mean(), inplace=True)
+  ```
+* **Forward/Backward Fill:**
+
+  ```python
+  df.fillna(method='ffill')  # Forward fill
+  ```
+* **KNN Imputation:**
+
+  ```python
+  from sklearn.impute import KNNImputer  
+  imputer = KNNImputer(n_neighbors=2)  
+  df_imputed = imputer.fit_transform(df)  
+  ```
+
+**Q3: Explain the imbalanced data. What will happen if imbalanced data is not handled?**
+Imbalanced data refers to datasets where the classes are not represented equally. If not handled, the model may become biased toward the majority class, leading to poor prediction of the minority class.
+
+**Q4: What are Up-sampling and Down-sampling? Explain with an example when up-sampling and down-sampling are required.**
+
+* **Up-sampling:** Increasing the size of the minority class, e.g., using SMOTE.
+* **Down-sampling:** Reducing the size of the majority class.
+  **Example:** In fraud detection, if fraud cases are only 5%, up-sampling the minority class helps balance the dataset.
+
+**Q5: What is data Augmentation? Explain SMOTE.**
+Data augmentation involves increasing the size/diversity of the training data artificially.
+**SMOTE (Synthetic Minority Oversampling Technique)** generates synthetic examples for the minority class by interpolating between existing examples.
+
+**Q6: What are outliers in a dataset? Why is it essential to handle outliers?**
+Outliers are data points that significantly differ from other observations. They must be handled because they can distort model performance and affect statistical assumptions.
+
+**Q7: You are working on a project that requires analyzing customer data. However, you notice that some of the data is missing. What are some techniques you can use to handle the missing data in your analysis?**
+
+* Imputation (mean/median/mode)
+* Interpolation
+* Model-based prediction of missing values
+* Using algorithms tolerant of missing data
+* Removing rows/columns with excessive missing values
+
+**Q8: You are working with a large dataset and find that a small percentage of the data is missing. What are some strategies you can use to determine if the missing data is missing at random or if there is a pattern to the missing data?**
+
+* Use **Missingno** and correlation heatmaps
+* Analyze missingness with grouping and visualization
+* Apply statistical tests (e.g., Little’s MCAR test)
+* Compare distributions of present vs. missing values
+
+**Q9: Suppose you are working on a medical diagnosis project and find that the majority of patients in the dataset do not have the condition of interest, while a small percentage do. What are some strategies you can use to evaluate the performance of your machine learning model on this imbalanced dataset?**
+
+* Use metrics like **F1-score, Precision, Recall, ROC-AUC**
+* **Confusion matrix** analysis
+* Use **stratified sampling** in cross-validation
+* **Resample** the data to balance classes
+
+**Q10: When attempting to estimate customer satisfaction for a project, you discover that the dataset is unbalanced, with the bulk of customers reporting being satisfied. What methods can you employ to balance the dataset and down-sample the majority class?**
+
+* Randomly remove samples from the majority class
+* Use **Tomek Links** or **NearMiss** algorithms
+* Combine down-sampling with up-sampling for better performance
+
+**Q11: You discover that the dataset is unbalanced with a low percentage of occurrences while working on a project that requires you to estimate the occurrence of a rare event. What methods can you employ to balance the dataset and up-sample the minority class?**
+
+* Use **SMOTE**, **ADASYN**, or **Random Over-Sampling**
+* Generate synthetic samples using **GANs**
+* Use **ensemble techniques** that focus on minority class (e.g., Balanced Random Forest)
+
+
