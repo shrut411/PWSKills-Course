@@ -1,0 +1,30 @@
+
+**Q1: What is Min-Max scaling, and how is it used in data preprocessing? Provide an example to illustrate its application.**
+Min-Max scaling normalizes data to a fixed range, usually \[0,1]. It’s used to ensure that all features contribute equally to the model.
+Example: For values `[1, 5, 10]`, scaled value = (x - min) / (max - min). For 5: (5 - 1) / (10 - 1) = 0.44.
+
+**Q2: What is the Unit Vector technique in feature scaling, and how does it differ from Min-Max scaling? Provide an example to illustrate its application.**
+Unit Vector scaling (also called normalization) transforms data to have a unit norm (length = 1).
+Unlike Min-Max, it focuses on vector direction rather than scale.
+Example: `[3, 4]` becomes `[0.6, 0.8]` because √(3² + 4²) = 5 → each value divided by 5.
+
+**Q3: What is PCA (Principal Component Analysis), and how is it used in dimensionality reduction? Provide an example to illustrate its application.**
+PCA transforms correlated features into a smaller set of uncorrelated principal components that retain most variance.
+Example: From 10 features, PCA may reduce to 3 components while preserving 95% of data variance.
+
+**Q4: What is the relationship between PCA and Feature Extraction, and how can PCA be used for Feature Extraction? Provide an example to illustrate this concept.**
+PCA is a feature extraction method that creates new features (principal components) from original ones.
+Example: Converting `[height, weight, BMI]` into `[PC1, PC2]` that capture core data patterns.
+
+**Q5: You are working on a project to build a recommendation system for a food delivery service. The dataset contains features such as price, rating, and delivery time. Explain how you would use Min-Max scaling to preprocess the data.**
+I would apply Min-Max scaling to normalize `price`, `rating`, and `delivery time` to a uniform scale \[0,1], preventing any one feature from dominating due to scale differences.
+
+**Q6: You are working on a project to build a model to predict stock prices. The dataset contains many features, such as company financial data and market trends. Explain how you would use PCA to reduce the dimensionality of the dataset.**
+I would apply PCA to convert high-dimensional financial data into fewer principal components capturing most variance, improving model performance and reducing overfitting.
+
+**Q7: For a dataset containing the following values: \[1, 5, 10, 15, 20], perform Min-Max scaling to transform the values to a range of -1 to 1.**
+Formula: x\_scaled = -1 + 2 \* (x - min) / (max - min)
+Transformed values: `[-1.0, -0.5, 0.0, 0.5, 1.0]`
+
+**Q8: For a dataset containing the following features: \[height, weight, age, gender, blood pressure], perform Feature Extraction using PCA. How many principal components would you choose to retain, and why?**
+I would use PCA to compute components and retain those that explain ≥95% of the variance—typically 2 or 3 components. This reduces dimensionality while preserving most information.
