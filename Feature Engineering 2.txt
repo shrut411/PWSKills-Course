@@ -1,0 +1,33 @@
+
+**Q1: What is the Filter method in feature selection, and how does it work?**
+The Filter method selects features based on their statistical relationship with the target variable, independent of any machine learning model. It uses techniques like correlation, chi-square test, and mutual information.
+
+**Q2: How does the Wrapper method differ from the Filter method in feature selection?**
+The Wrapper method uses a predictive model to evaluate feature subsets and selects the best-performing combination. Unlike the Filter method, it is model-dependent and computationally expensive but generally provides better results.
+
+**Q3: What are some common techniques used in Embedded feature selection methods?**
+
+* Lasso (L1 Regularization)
+* Decision Tree-based importance
+* Ridge Regression (L2 Regularization)
+* ElasticNet
+* Feature importance from models like Random Forests
+
+**Q4: What are some drawbacks of using the Filter method for feature selection?**
+
+* Ignores interactions between features
+* Does not account for feature importance in model context
+* May select irrelevant features for the specific model used
+
+**Q5: In which situations would you prefer using the Filter method over the Wrapper method for feature selection?**
+When the dataset is large or high-dimensional, and computational resources or time are limited, the Filter method is preferred due to its simplicity and speed.
+
+**Q6: In a telecom company, you are working on a project to develop a predictive model for customer churn. You are unsure of which features to include in the model because the dataset contains several different ones. Describe how you would choose the most pertinent attributes for the model using the Filter Method.**
+Use correlation with the churn variable, chi-square test for categorical features, and mutual information to rank features. Select the top-ranked ones based on a threshold or top-k approach.
+
+**Q7: You are working on a project to predict the outcome of a soccer match. You have a large dataset with many features, including player statistics and team rankings. Explain how you would use the Embedded method to select the most relevant features for the model.**
+Train a model like Random Forest or use Lasso regression, then analyze feature importances or coefficients. Select features with the highest weights and discard the least influential ones.
+
+**Q8: You are working on a project to predict the price of a house based on its features, such as size, location, and age. You have a limited number of features, and you want to ensure that you select the most important ones for the model. Explain how you would use the Wrapper method to select the best set of features for the predictor.**
+Use a method like Recursive Feature Elimination (RFE) with a regression model. Evaluate different subsets of features using cross-validation and select the combination that yields the highest prediction accuracy or lowest error.
+
