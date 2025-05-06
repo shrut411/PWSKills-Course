@@ -1,0 +1,52 @@
+Q1: A t-test is used when the sample size is small (<30) and population standard deviation is unknown. A z-test is used for large samples (n > 30) and when the population standard deviation is known.
+Example: Use a t-test to compare sample means of student scores from a small group. Use a z-test to compare a sample mean to the population mean with known population variance.
+
+Q2: A one-tailed test checks for a difference in one direction (e.g., greater than), while a two-tailed test checks for a difference in both directions (e.g., not equal).
+Example: One-tailed: checking if a new teaching method increases test scores. Two-tailed: checking if a drug causes any change (increase or decrease) in blood pressure.
+
+Q3: Type I error is rejecting a true null hypothesis (false positive). Type II error is failing to reject a false null hypothesis (false negative).
+Example: Type I: Concluding a drug works when it doesn't. Type II: Concluding a drug doesn’t work when it actually does.
+
+Q4: Bayes' Theorem calculates conditional probability:
+P(A|B) = [P(B|A) * P(A)] / P(B).
+Example: A disease affects 1% of people. A test is 99% accurate. If someone tests positive, what’s the probability they actually have the disease? Use Bayes’ theorem.
+
+Q5: A confidence interval gives a range in which a population parameter likely lies.
+CI = x̄ ± z*(σ/√n) for known std dev, or use t-distribution if unknown.
+Example: Sample mean = 100, std dev = 10, n = 25. 95% CI ≈ 100 ± 1.96*(10/√25) = (96.08, 103.92).
+
+Q6: Example using Bayes’ Theorem:
+
+Disease prevalence = 0.01 (P(D)), test sensitivity = 0.99 (P(Pos|D)), false positive rate = 0.05 (P(Pos|¬D)).
+
+P(D|Pos) = [0.990.01] / [(0.990.01)+(0.05*0.99)] ≈ 0.167 → There’s a 16.7% chance the person actually has the disease after testing positive.
+
+Q7: 95% CI for mean 50, std dev 5, n unknown (assume large n):
+CI = 50 ± 1.96*(5/√n). Without sample size, CI cannot be exact. For n = 30, CI = (48.21, 51.79).
+Interpretation: We're 95% confident the population mean lies between 48.21 and 51.79.
+
+Q8: Margin of error (MoE) = z*(σ/√n). Larger sample size → smaller margin.
+Example: With same std dev, increasing n from 25 to 100 reduces MoE since √100 > √25.
+
+Q9: z = (X - μ) / σ = (75 - 70)/5 = 1.
+Interpretation: A score of 75 is 1 standard deviation above the mean.
+
+Q10: H0: μ = 0, H1: μ ≠ 0.
+t = (6 - 0)/(2.5/√50) = 6 / (0.3536) ≈ 16.97.
+At 95% CI, critical t ≈ ±2.01 → reject H0. The drug is significantly effective.
+
+Q11: p̂ = 0.65, n = 500
+CI = 0.65 ± 1.96 * √[0.65(1-0.65)/500] ≈ (0.606, 0.694)
+We are 95% confident that the true proportion of satisfied employees is between 60.6% and 69.4%.
+
+Q12: H0: μA = μB, H1: μA ≠ μB
+t = (85 - 82)/√[(6²/50)+(5²/50)] = 3 / √(0.72 + 0.5) = 3 / √1.22 ≈ 2.72
+df ≈ 98, critical t ≈ ±2.626 → Since 2.72 > 2.626, reject H0. Significant difference exists.
+
+Q13: Mean = 60, std dev = 8, n = 50, sample mean = 65
+CI = 65 ± 1.645*(8/√50) ≈ 65 ± 1.857 ≈ (63.14, 66.86)
+We are 90% confident the population mean lies within this range.
+
+Q14: H0: μ = 0, H1: μ ≠ 0
+t = (0.25 - 0)/(0.05/√30) = 0.25 / 0.00913 ≈ 27.39
+Critical t at 90% ≈ ±1.699 → reject H0. Caffeine has significant effect on reaction time.
