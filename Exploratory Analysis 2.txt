@@ -1,0 +1,109 @@
+### Flight Price Dataset
+
+**Q1. Load the flight price dataset and examine its dimensions. How many rows and columns does the dataset have?**  
+- **Approach**: Use a data analysis tool (e.g., Python with pandas). Load the dataset with `pd.read_csv('flight_price.csv')`. Check dimensions using `df.shape`.  
+- **Answer**: Without the dataset, I cannot provide the exact number of rows and columns. Typically, a flight price dataset might have thousands of rows (e.g., 10,000 flights) and columns like airline, price, date, etc. (e.g., 5-10 columns). You can confirm by running `df.shape`.
+
+**Q2. What is the distribution of flight prices in the dataset? Create a histogram to visualize the distribution.**  
+- **Approach**: Use `df['price'].hist(bins=30)` in Python with matplotlib or seaborn to create a histogram. This will show if prices are skewed (e.g., right-skewed with more low-cost flights) or normally distributed.  
+- **Answer**: Without data, I cannot plot the histogram. Expect a right-skewed distribution, as most flights are budget-friendly, with fewer expensive outliers. On a canvas panel, I can generate a sample histogram if you'd like.
+
+**Q3. What is the range of prices in the dataset? What is the minimum and maximum price?**  
+- **Approach**: Use `df['price'].min()` and `df['price'].max()` to find the minimum and maximum prices. The range is `max - min`.  
+- **Answer**: Without data, I cannot compute this. Typically, flight prices might range from $50 (budget) to $2000 (premium/international). You can calculate the exact values using the above commands.
+
+**Q4. How does the price of flights vary by airline? Create a boxplot to compare the prices of different airlines.**  
+- **Approach**: Use `sns.boxplot(x='airline', y='price', data=df)` to create a boxplot. This will show the median, quartiles, and outliers for each airline.  
+- **Answer**: Without data, I cannot plot this. Expect airlines like budget carriers (e.g., Spirit) to have lower medians and luxury airlines (e.g., Emirates) to have higher medians. On a canvas panel, I can create a sample boxplot if requested.
+
+**Q5. Are there any outliers in the dataset? Identify any potential outliers using a boxplot and describe how they may impact your analysis.**  
+- **Approach**: From the boxplot in Q4, outliers are points beyond 1.5 times the interquartile range (IQR) from the quartiles.  
+- **Answer**: Outliers might be extremely high-priced flights (e.g., last-minute or first-class tickets). They can skew averages, affecting pricing models or predictions. Removing or capping outliers may be necessary for accurate analysis.
+
+**Q6. You are working for a travel agency, and your boss has asked you to analyze the Flight Price dataset to identify the peak travel season. What features would you analyze to identify the peak season, and how would you present your findings to your boss?**  
+- **Features to Analyze**:  
+  - **Date/Time**: Extract month or season from the date column to see price trends (e.g., higher prices in summer or holidays).  
+  - **Price**: Higher prices often indicate peak demand.  
+  - **Flight Volume**: More flights in certain months may indicate peak season.  
+- **Visualizations**:  
+  - Line plot of average price by month (`df.groupby('month')['price'].mean().plot()`).  
+  - Bar chart of flight counts by month.  
+- **Presentation**: Highlight months with highest prices and flight volumes (e.g., July-August or December) as peak seasons. Recommend targeting these periods for promotions or staffing.
+
+**Q7. You are a data analyst for a flight booking website, and you have been asked to analyze the Flight Price dataset to identify any trends in flight prices. What features would you analyze to identify these trends, and what visualizations would you use to present your findings to your team?**  
+- **Features to Analyze**:  
+  - **Date/Time**: Price trends over months or days of the week.  
+  - **Airline**: Price variations across airlines.  
+  - **Route/Destination**: Prices for popular routes.  
+- **Visualizations**:  
+  - Line plot of average price over time.  
+  - Boxplot of prices by airline.  
+  - Heatmap of prices by route (origin-destination pairs).  
+- **Presentation**: Show trends like rising prices during holidays or lower prices mid-week. Recommend dynamic pricing strategies.
+
+**Q8. You are a data scientist working for an airline company, and you have been asked to analyze the Flight Price dataset to identify the factors that affect flight prices. What features would you analyze to identify these factors, and how would you present your findings to the management team?**  
+- **Features to Analyze**:  
+  - **Date/Time**: Seasonal or weekly effects.  
+  - **Airline**: Brand impact on pricing.  
+  - **Route/Distance**: Longer flights may cost more.  
+  - **Booking Lead Time**: Last-minute bookings may be pricier.  
+- **Analysis**: Use regression models (e.g., linear regression) to quantify feature impacts on price.  
+- **Visualizations**:  
+  - Scatter plot of price vs. distance.  
+  - Bar chart of average price by airline.  
+  - Line plot of price by booking lead time.  
+- **Presentation**: Highlight key drivers (e.g., distance and season) and suggest pricing adjustments.
+
+---
+
+### Google Playstore Dataset
+
+**Q9. Load the Google Playstore dataset and examine its dimensions. How many rows and columns does the dataset have?**  
+- **Approach**: Load with `pd.read_csv('google_playstore.csv')`. Check dimensions with `df.shape`.  
+- **Answer**: Without the dataset, I cannot confirm. A typical Playstore dataset might have 10,000+ rows (apps) and columns like app name, category, rating, size, price, etc. (e.g., 8-12 columns). Run `df.shape` to verify.
+
+**Q10. How does the rating of apps vary by category? Create a boxplot to compare the ratings of different app categories.**  
+- **Approach**: Use `sns.boxplot(x='category', y='rating', data=df)`.  
+- **Answer**: Without data, I cannot plot. Expect categories like "Education" to have higher median ratings and "Games" to have more variability. I can create a sample boxplot on a canvas panel if requested.
+
+**Q11. Are there any missing values in the dataset? Identify any missing values and describe how they may impact your analysis.**  
+- **Approach**: Use `df.isnull().sum()` to identify missing values.  
+- **Answer**: Missing values might occur in columns like "rating" or "size". They can skew averages or exclude apps from analysis. Impute (e.g., with median) or remove rows depending on the extent of missing data.
+
+**Q12. What is the relationship between the size of an app and its rating? Create a scatter plot to visualize the relationship.**  
+- **Approach**: Use `plt.scatter(df['size'], df['rating'])`.  
+- **Answer**: Without data, I cannot plot. Typically, there’s little correlation—larger apps (e.g., games) might have varied ratings. I can generate a sample scatter plot on a canvas panel if requested.
+
+**Q13. How does the type of app affect its price? Create a bar chart to compare average prices by app type.**  
+- **Approach**: Use `df.groupby('type')['price'].mean().plot(kind='bar')`. "Type" typically means free vs. paid.  
+- **Answer**: Paid apps will have a non-zero average price, while free apps will be $0. I can create a sample bar chart on a canvas panel if requested.
+
+**Q14. What are the top 10 most popular apps in the dataset? Create a frequency table to identify the apps with the highest number of installs.**  
+- **Approach**: Use `df.groupby('app')['installs'].sum().sort_values(ascending=False).head(10)`.  
+- **Answer**: Without data, I cannot list apps. Expect popular apps like WhatsApp, Facebook, or games like Candy Crush. You can run the command to get the exact list.
+
+**Q15. A company wants to launch a new app on the Google Playstore and has asked you to analyze the Google Playstore dataset to identify the most popular app categories. How would you approach this task, and what features would you analyze to make recommendations to the company?**  
+- **Approach**:  
+  - **Features**: Analyze "category" and "installs".  
+  - Use `df.groupby('category')['installs'].sum().sort_values(ascending=False)`.  
+- **Visualizations**: Bar chart of total installs by category.  
+- **Recommendation**: Recommend categories like "Social" or "Games" if they have high installs. Suggest focusing on user needs in those categories.
+
+**Q16. A mobile app development company wants to analyze the Google Playstore dataset to identify the most successful app developers. What features would you analyze to make recommendations to the company, and what data visualizations would you use to present your findings?**  
+- **Features to Analyze**:  
+  - **Developer**: Group by developer name.  
+  - **Installs**: Total installs per developer.  
+  - **Rating**: Average rating per developer.  
+- **Visualizations**:  
+  - Bar chart of top developers by installs.  
+  - Scatter plot of installs vs. average rating.  
+- **Recommendation**: Highlight developers with high installs and ratings. Suggest studying their strategies (e.g., frequent updates, user engagement).
+
+**Q17. A marketing research firm wants to analyze the Google Playstore dataset to identify the best time to launch a new app. What features would you analyze to make recommendations to the company, and what data visualizations would you use to present your findings?**  
+- **Features to Analyze**:  
+  - **Last Updated**: Extract month from the "last updated" column to see app update trends.  
+  - **Installs**: Correlate launch/update months with installs.  
+- **Visualizations**:  
+  - Line plot of installs by month of last update.  
+  - Bar chart of app launches by month.  
+- **Recommendation**: Identify months with high installs (e.g., pre-holidays like November) as ideal launch times. Suggest aligning with seasonal trends.
