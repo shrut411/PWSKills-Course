@@ -1,0 +1,134 @@
+### **Q1: Key features of the wine quality dataset and their importance in predicting wine quality.**
+
+The wine quality dataset typically includes features such as:
+
+1. **Fixed Acidity**: Affects the sour taste; higher acidity usually means a fresher taste.
+2. **Volatile Acidity**: High levels can lead to an unpleasant vinegar taste.
+3. **Citric Acid**: Adds freshness and flavor; contributes to acidity.
+4. **Residual Sugar**: The amount of sugar left after fermentation; higher levels result in sweetness.
+5. **Chlorides**: Represents salt content, affecting taste.
+6. **Free Sulfur Dioxide**: Prevents microbial growth and oxidation.
+7. **Total Sulfur Dioxide**: A combination of free and bound forms; important for preserving wine.
+8. **Density**: Correlates with alcohol and sugar content.
+9. **pH**: Indicates acidity or alkalinity; affects microbial stability.
+10. **Sulphates**: Acts as an antioxidant; high levels can enhance flavor.
+11. **Alcohol**: Affects body and taste; a significant factor in quality perception.
+12. **Quality (Target)**: Typically rated on a scale (e.g., 0–10), determined by sensory data.
+
+**Importance**: Each feature influences the sensory experience, which in turn affects the perceived quality. For instance, higher alcohol and balanced acidity typically contribute to higher ratings.
+
+---
+
+### **Q2: Handling missing data during feature engineering and the pros and cons of different imputation techniques.**
+
+**Common Imputation Techniques**:
+
+1. **Mean/Median Imputation**: Replaces missing values with the mean or median of the column.
+
+   * *Pros*: Simple and quick, suitable for numerical data.
+   * *Cons*: Ignores data variability, prone to bias in skewed data.
+
+2. **Mode Imputation**: Suitable for categorical data.
+
+   * *Pros*: Maintains the most frequent category.
+   * *Cons*: Ignores other potential categories, especially in diverse datasets.
+
+3. **K-Nearest Neighbors (KNN)**: Imputes based on similar data points.
+
+   * *Pros*: Preserves relationships between features.
+   * *Cons*: Computationally expensive, sensitive to outliers.
+
+4. **Multivariate Imputation by Chained Equations (MICE)**: Uses a model to predict missing values.
+
+   * *Pros*: Accounts for multivariate relationships.
+   * *Cons*: Complex, prone to model overfitting.
+
+5. **Interpolation/Extrapolation**: Uses surrounding data points (e.g., linear interpolation).
+
+   * *Pros*: Maintains data trends.
+   * *Cons*: Not suitable for non-sequential data.
+
+**Choice**: The method depends on the data type, amount of missing values, and dataset size.
+
+---
+
+### **Q3: Key factors affecting students' performance in exams and statistical analysis techniques.**
+
+**Key Factors**:
+
+1. **Study Hours**: Time spent studying directly impacts performance.
+2. **Attendance**: More consistent attendance often correlates with higher grades.
+3. **Parental Education**: Parents' education level might influence support at home.
+4. **Socioeconomic Status**: Access to resources can impact learning opportunities.
+5. **Sleep Patterns**: Poor sleep can reduce concentration and retention.
+6. **Mental Health**: Stress and anxiety can negatively impact performance.
+
+**Statistical Techniques**:
+
+* **Correlation Analysis**: To identify relationships between variables (e.g., study hours and grades).
+* **Regression Analysis**: To predict performance based on independent factors.
+* **Factor Analysis**: To group correlated variables and reduce dimensionality.
+* **ANOVA**: To compare performance across different groups (e.g., based on attendance).
+
+---
+
+### **Q4: Feature engineering process for student performance data and variable transformation.**
+
+**Step 1: Data Cleaning**
+
+* Handle missing values using techniques suitable for educational data, like median imputation.
+* Remove outliers that may skew the results.
+
+**Step 2: Feature Selection**
+
+* Select relevant features based on domain knowledge (e.g., study hours, attendance).
+* Use **Correlation Heatmaps** to identify redundant features.
+
+**Step 3: Transformation**
+
+* **Normalization/Standardization**: Scale numerical data for consistency.
+* **Encoding Categorical Variables**: One-hot encoding for non-ordinal features (e.g., gender).
+* **Polynomial Features**: To capture non-linear relationships.
+* **Binning**: Group continuous variables (e.g., age groups).
+
+---
+
+### **Q5: Exploratory Data Analysis (EDA) for wine quality data and transformations to improve normality.**
+
+**Steps for EDA**:
+
+1. **Data Visualization**: Histograms, box plots, and density plots to examine distribution.
+2. **Summary Statistics**: Mean, median, variance to understand data characteristics.
+3. **Correlation Matrix**: To assess relationships among features.
+4. **Skewness and Kurtosis**: Identify non-normal distributions.
+
+**Common Non-Normal Features**:
+
+* **Alcohol**: Often positively skewed.
+* **Volatile Acidity**: Right-skewed due to a few high values.
+
+**Transformations**:
+
+1. **Log Transformation**: Reduces right skew (e.g., for volatile acidity).
+2. **Square Root Transformation**: Useful for mildly skewed data.
+3. **Box-Cox Transformation**: Makes data more normal-like.
+4. **Power Transformation**: To stabilize variance.
+
+---
+
+### **Q6: Principal Component Analysis (PCA) for dimensionality reduction in wine quality data.**
+
+**Steps to Perform PCA**:
+
+1. **Standardize Data**: Essential as PCA is sensitive to scale.
+2. **Compute Covariance Matrix**: To understand variance between features.
+3. **Eigenvalue Decomposition**: Obtain eigenvectors and eigenvalues.
+4. **Sort and Select Components**: Based on the amount of variance explained.
+5. **Transform Data**: Project it onto selected principal components.
+
+**Minimum Number of Components**:
+
+* The goal is to explain **90% of variance**.
+* After eigenvalue decomposition, sum the explained variance ratio of components until it reaches 0.90.
+* Typically, 4–5 principal components suffice, but it varies based on data specifics.
+
