@@ -1,0 +1,121 @@
+**Q1: Explain the concept of R-squared in linear regression models. How is it calculated, and what does it represent?**
+
+* **R-squared ( $R^2$ )** measures the proportion of the variance in the dependent variable that is predictable from the independent variables.
+* Formula:
+
+  $$
+  R^2 = 1 - \frac{SS_{res}}{SS_{tot}}
+  $$
+
+  where $SS_{res}$ is the sum of squares of residuals and $SS_{tot}$ is the total sum of squares.
+* It ranges from 0 to 1, with values closer to 1 indicating a better fit.
+
+---
+
+**Q2: Define adjusted R-squared and explain how it differs from the regular R-squared.**
+
+* **Adjusted $R^2$** adjusts the $R^2$ value based on the number of predictors and the sample size.
+* Formula:
+
+  $$
+  \text{Adjusted } R^2 = 1 - \left( \frac{(1 - R^2)(n - 1)}{n - k - 1} \right)
+  $$
+
+  where $n$ is the number of observations and $k$ is the number of predictors.
+* It prevents overestimating the model’s fit by penalizing the inclusion of irrelevant predictors.
+
+---
+
+**Q3: When is it more appropriate to use adjusted R-squared?**
+
+* Adjusted $R^2$ is more appropriate when comparing models with different numbers of predictors.
+* It accounts for the trade-off between the number of predictors and the model's explanatory power, preventing overfitting.
+
+---
+
+**Q4: What are RMSE, MSE, and MAE in the context of regression analysis? How are these metrics calculated, and what do they represent?**
+
+* **RMSE (Root Mean Square Error):** Measures the square root of the average squared errors.
+
+  $$
+  RMSE = \sqrt{\frac{\sum (y_i - \hat{y_i})^2}{n}}
+  $$
+* **MSE (Mean Squared Error):** Average of the squared differences between actual and predicted values.
+
+  $$
+  MSE = \frac{\sum (y_i - \hat{y_i})^2}{n}
+  $$
+* **MAE (Mean Absolute Error):** Average of the absolute differences between actual and predicted values.
+
+  $$
+  MAE = \frac{\sum |y_i - \hat{y_i}|}{n}
+  $$
+
+---
+
+**Q5: Advantages and Disadvantages of RMSE, MSE, and MAE:**
+
+* **RMSE:**
+
+  * Advantage: Penalizes large errors more than smaller errors.
+  * Disadvantage: Sensitive to outliers.
+* **MSE:**
+
+  * Advantage: Provides a smooth gradient, useful for optimization.
+  * Disadvantage: Difficult to interpret in the original data units.
+* **MAE:**
+
+  * Advantage: Easy to interpret as it is in the original data units.
+  * Disadvantage: Less sensitive to large errors.
+
+---
+
+**Q6: Lasso Regularization and Its Differences from Ridge Regularization:**
+
+* **Lasso (Least Absolute Shrinkage and Selection Operator):**
+
+  * Adds $L1$ penalty, i.e., the absolute sum of coefficients.
+  * Equation:
+
+    $$
+    \text{Cost} = RSS + \lambda \sum |b_i|
+    $$
+  * Difference: Lasso can shrink coefficients to zero, effectively performing feature selection. Ridge only reduces coefficient magnitude.
+
+---
+
+**Q7: How do Regularized Linear Models Prevent Overfitting?**
+
+* By adding a penalty term to the cost function, regularized models (like Ridge, Lasso) reduce the magnitude of coefficients.
+* Example: Lasso can set coefficients of less important features to zero, thereby reducing model complexity and preventing overfitting.
+
+---
+
+**Q8: Limitations of Regularized Linear Models:**
+
+* Regularized models may **underfit** the data if the penalty term is too high.
+* They can also be **less interpretable** due to coefficient shrinkage.
+* Selecting the appropriate $\lambda$ is crucial, as too high or too low values can impact performance.
+
+---
+
+**Q9: Comparing Models Using RMSE and MAE:**
+
+* Model A: RMSE = 10
+* Model B: MAE = 8
+* RMSE penalizes larger errors more than MAE. Thus, Model A has more significant outliers or higher variance in errors.
+* Since MAE is lower, **Model B** would be considered the better performer in terms of average absolute error.
+* Limitation: The choice depends on whether the focus is on average error (MAE) or error variance (RMSE).
+
+---
+
+**Q10: Comparing Ridge vs. Lasso Regularization:**
+
+* **Model A:** Ridge with $\lambda = 0.1$
+* **Model B:** Lasso with $\lambda = 0.5$
+* Ridge maintains all coefficients but reduces their magnitude, making it suitable when all predictors are potentially useful.
+* Lasso can eliminate some coefficients, making it better for feature selection when some predictors are less important.
+* Trade-offs:
+
+  * Ridge is less prone to overfitting but less effective for feature selection.
+  * Lasso can set coefficients to zero, but higher $\lambda$ values may over-penalize, leading to underfitting.
