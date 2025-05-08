@@ -1,0 +1,72 @@
+
+**Q1: What is Lasso Regression, and how does it differ from other regression techniques?**
+
+* **Lasso Regression (Least Absolute Shrinkage and Selection Operator):** A type of linear regression that applies $L1$ regularization, which adds the absolute sum of coefficients as a penalty term.
+* Cost Function:
+
+  $$
+  \text{Cost} = RSS + \lambda \sum |b_i|
+  $$
+* **Difference from Ridge and OLS:**
+
+  * Unlike Ridge, Lasso can set coefficients to zero, effectively performing feature selection.
+  * OLS only minimizes residuals without any penalty term, making it susceptible to overfitting.
+
+---
+
+**Q2: What is the Main Advantage of Using Lasso Regression in Feature Selection?**
+
+* **Feature Selection:** Lasso can shrink less important feature coefficients to exactly zero, effectively removing them from the model.
+* This reduces model complexity, improves interpretability, and prevents overfitting by excluding irrelevant features.
+
+---
+
+**Q3: How Do You Interpret the Coefficients of a Lasso Regression Model?**
+
+* Coefficients represent the impact of each predictor on the target variable, but they are adjusted for the $L1$ penalty.
+* Coefficients that are exactly zero indicate that the corresponding feature is excluded from the model.
+* Non-zero coefficients indicate important features, but their values are scaled down due to the regularization effect.
+
+---
+
+**Q4: What Are the Tuning Parameters in Lasso Regression and How Do They Affect the Model?**
+
+* The primary tuning parameter in Lasso is **lambda ($\lambda$)**, which controls the penalty strength:
+
+  * **High $\lambda$:** More shrinkage, potentially more features set to zero.
+  * **Low $\lambda$:** Less shrinkage, more features retained.
+* Selecting the optimal $\lambda$ involves balancing bias and variance. Cross-validation is typically used to identify the optimal value.
+
+---
+
+**Q5: Can Lasso Regression Be Used for Non-Linear Regression Problems? If Yes, How?**
+
+* Lasso is inherently linear, but it can handle **non-linear data by incorporating polynomial features**.
+* Example: Transform predictors $x$ into $x, x^2, x^3, \ldots$ and then apply Lasso regression to capture non-linear relationships.
+
+---
+
+**Q6: What Is the Difference Between Ridge Regression and Lasso Regression?**
+
+* **Ridge Regression:** Applies $L2$ regularization, which shrinks coefficients but does not set them to zero.
+* **Lasso Regression:** Applies $L1$ regularization, which can reduce coefficients to zero, effectively performing feature selection.
+* **Key Difference:** Ridge is better for preventing overfitting without eliminating features, whereas Lasso is better for sparse models with feature selection.
+
+---
+
+**Q7: Can Lasso Regression Handle Multicollinearity in the Input Features? If Yes, How?**
+
+* Yes, Lasso can handle multicollinearity by setting some coefficients to zero, thereby removing redundant features.
+* However, it may arbitrarily select one correlated feature over another, potentially leading to instability in the model.
+* If multicollinearity is severe, **Elastic Net Regression** (a combination of Ridge and Lasso) may provide better stability.
+
+---
+
+**Q8: How Do You Choose the Optimal Value of the Regularization Parameter (Lambda) in Lasso Regression?**
+
+* The optimal $\lambda$ is selected using **cross-validation techniques**, such as:
+
+  * **k-Fold Cross-Validation:** Testing multiple $\lambda$ values and selecting the one that minimizes the cross-validated mean squared error.
+  * **Grid Search/Random Search:** Exploring a range of $\lambda$ values to find the best-performing one.
+  * **Regularization Path:** Plotting coefficient paths as $\lambda$ changes to observe how feature coefficients are affected.
+
