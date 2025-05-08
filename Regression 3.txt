@@ -1,0 +1,72 @@
+
+**Q1: What is Ridge Regression, and how does it differ from ordinary least squares regression?**
+
+* **Ridge Regression:** A type of linear regression that applies $L2$ regularization to reduce the impact of multicollinearity and prevent overfitting.
+* Regularization term:
+
+  $$
+  \text{Cost} = RSS + \lambda \sum b_i^2
+  $$
+* Difference:
+
+  * Ordinary Least Squares (OLS) only minimizes the sum of squared residuals.
+  * Ridge Regression adds a penalty term $\lambda \sum b_i^2$, which shrinks the coefficients towards zero but never exactly zero.
+
+---
+
+**Q2: Assumptions of Ridge Regression:**
+
+1. **Linearity:** The relationship between predictors and target variable is linear.
+2. **Independence:** Observations are independent.
+3. **No Multicollinearity:** Ridge addresses multicollinearity but assumes that the predictors are not perfectly collinear.
+4. **Homoscedasticity:** Constant variance of residuals.
+5. **Normality of Residuals:** Residuals are normally distributed.
+
+---
+
+**Q3: How to Select the Tuning Parameter (Lambda) in Ridge Regression?**
+
+* **Cross-Validation:** Use k-fold cross-validation to find the optimal $\lambda$ value that minimizes the mean squared error.
+* **Grid Search/Random Search:** Test multiple $\lambda$ values and select the one with the best performance.
+* **Regularization Path:** Plot the coefficients against different $\lambda$ values to observe the effect on coefficient shrinkage.
+
+---
+
+**Q4: Can Ridge Regression Be Used for Feature Selection? If Yes, How?**
+
+* Ridge Regression is **not ideal for feature selection** because it does not reduce coefficients to zero.
+* However, it can **shrink coefficients**, reducing the impact of less important features.
+* Lasso is more appropriate for feature selection as it can eliminate features by setting coefficients exactly to zero.
+
+---
+
+**Q5: How Does Ridge Regression Perform in the Presence of Multicollinearity?**
+
+* Ridge Regression is particularly effective in handling multicollinearity.
+* By adding a penalty term, it reduces the variance of the coefficient estimates, preventing overfitting caused by correlated predictors.
+
+---
+
+**Q6: Can Ridge Regression Handle Both Categorical and Continuous Independent Variables?**
+
+* Yes, but **categorical variables need to be encoded** as numerical data (e.g., using one-hot encoding or label encoding).
+* Continuous variables can be used directly after standardization or normalization to ensure they are on a similar scale.
+
+---
+
+**Q7: How to Interpret the Coefficients of Ridge Regression?**
+
+* Coefficients in Ridge Regression represent the change in the dependent variable for a one-unit increase in the predictor, adjusted for the regularization penalty.
+* As $\lambda$ increases, the coefficients shrink towards zero, indicating reduced importance of those features.
+* However, the coefficients are not directly comparable to those from OLS due to the shrinkage effect.
+
+---
+
+**Q8: Can Ridge Regression Be Used for Time-Series Data Analysis? If Yes, How?**
+
+* Yes, Ridge Regression can be used for time-series data analysis, but additional steps are required:
+
+  * **Stationarity:** Ensure data is stationary using differencing or detrending.
+  * **Lag Features:** Create lagged variables to incorporate temporal dependencies.
+  * **Cross-Validation:** Use time-series cross-validation (e.g., rolling window) to maintain the temporal structure.
+
