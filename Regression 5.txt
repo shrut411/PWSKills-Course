@@ -1,0 +1,96 @@
+
+**Q1: What is Elastic Net Regression and How Does It Differ from Other Regression Techniques?**
+
+* **Elastic Net Regression:** Combines both $L1$ (Lasso) and $L2$ (Ridge) regularization. The cost function is:
+
+  $$
+  \text{Cost} = RSS + \lambda_1 \sum |b_i| + \lambda_2 \sum b_i^2
+  $$
+* **Differences:**
+
+  * Lasso can set coefficients to zero (feature selection) but may underperform with highly correlated features.
+  * Ridge handles multicollinearity but retains all features.
+  * Elastic Net strikes a balance by combining both penalties, making it more robust in cases of correlated features.
+
+---
+
+**Q2: How Do You Choose the Optimal Values of the Regularization Parameters for Elastic Net Regression?**
+
+* **Cross-Validation:**
+
+  * Perform grid search or random search over a range of $\lambda_1$ and $\lambda_2$ values.
+  * Use k-fold cross-validation to evaluate the model’s performance for each combination of parameters.
+* **ElasticNetCV in Python:** Automatically selects optimal parameters by testing different combinations of $\lambda_1$ and $\lambda_2$.
+
+---
+
+**Q3: What Are the Advantages and Disadvantages of Elastic Net Regression?**
+
+* **Advantages:**
+
+  * Combines Ridge and Lasso, addressing multicollinearity and feature selection simultaneously.
+  * More stable than Lasso in the presence of correlated features.
+* **Disadvantages:**
+
+  * More computationally intensive due to two tuning parameters.
+  * Requires careful tuning to avoid over-penalization.
+
+---
+
+**Q4: Common Use Cases for Elastic Net Regression:**
+
+* **High-dimensional datasets** with many features, particularly when features are highly correlated.
+* **Genomic data analysis** to select relevant genetic markers.
+* **Financial datasets** with correlated economic indicators.
+
+---
+
+**Q5: How Do You Interpret the Coefficients in Elastic Net Regression?**
+
+* Coefficients reflect the impact of each predictor on the target variable, adjusted for both $L1$ and $L2$ penalties.
+* Coefficients can be shrunk towards zero or set to zero, indicating feature exclusion.
+* The relative magnitude of coefficients indicates feature importance, but the degree of shrinkage depends on $\lambda_1$ and $\lambda_2$.
+
+---
+
+**Q6: How Do You Handle Missing Values When Using Elastic Net Regression?**
+
+* **Options:**
+
+  * Impute missing values using mean, median, or mode.
+  * Use advanced imputation techniques like KNN or regression-based imputation.
+  * In Python, the `SimpleImputer` or `IterativeImputer` from `sklearn` can handle missing data before fitting the model.
+
+---
+
+**Q7: How Do You Use Elastic Net Regression for Feature Selection?**
+
+* As $\lambda_1$ increases, Lasso’s effect becomes more prominent, pushing coefficients to zero and effectively removing less important features.
+* Elastic Net allows a trade-off between Ridge and Lasso, ensuring that some correlated features are retained while others are eliminated.
+
+---
+
+**Q8: How Do You Pickle and Unpickle a Trained Elastic Net Regression Model in Python?**
+
+* **Pickling a model:**
+
+  ```python
+  import pickle
+  with open('elastic_net_model.pkl', 'wb') as file:
+      pickle.dump(model, file)
+  ```
+
+* **Unpickling a model:**
+
+  ```python
+  with open('elastic_net_model.pkl', 'rb') as file:
+      loaded_model = pickle.load(file)
+  ```
+
+---
+
+**Q9: What Is the Purpose of Pickling a Model in Machine Learning?**
+
+* **Serialization:** Converts the model into a byte stream, allowing it to be saved to disk.
+* **Portability:** Enables the model to be shared and deployed in different environments without retraining.
+* **Efficiency:** Prevents the need to refit the model, saving time and computational resources.
