@@ -1,0 +1,41 @@
+
+### **Q1: What is Bayes' theorem?**
+
+Bayes' theorem is a mathematical formula that describes the probability of an event based on prior knowledge of conditions that might be related to the event. It calculates the probability of a hypothesis given observed data.
+
+### **Q2: What is the formula for Bayes' theorem?**
+
+The formula for Bayes' theorem is:
+
+$$
+P(H | E) = \frac{P(E | H) \times P(H)}{P(E)}
+$$
+
+Where:
+
+* $P(H | E)$: Posterior probability (Probability of hypothesis $H$ given evidence $E$)
+* $P(E | H)$: Likelihood (Probability of evidence $E$ given hypothesis $H$)
+* $P(H)$: Prior probability of hypothesis $H$
+* $P(E)$: Marginal probability of evidence $E$
+
+### **Q3: How is Bayes' theorem used in practice?**
+
+Bayes' theorem is widely used in various fields, including medical diagnostics, spam filtering, decision-making, and machine learning, to update the probability of a hypothesis as new evidence or data becomes available.
+
+### **Q4: What is the relationship between Bayes' theorem and conditional probability?**
+
+Bayes' theorem is derived from the definition of conditional probability. It essentially reverses the conditional probability, allowing us to calculate the probability of a cause given its effect, using the probability of the effect given its cause.
+
+### **Q5: How do you choose which type of Naive Bayes classifier to use for any given problem?**
+
+* **Gaussian Naive Bayes:** For continuous data that is normally distributed.
+* **Multinomial Naive Bayes:** For data represented as word counts or term frequencies (e.g., text classification).
+* **Bernoulli Naive Bayes:** For binary/boolean data.
+
+### **Q6: Assignment - Naive Bayes Classification**
+
+For the given dataset:
+
+* We have two features $X1$ and $X2$ and two classes $A$ and $B$.
+* We need to predict the class for a new instance with features $X1 = 3$ and $X2 = 4$.
+* We will use the frequency table provided to calculate the probabilities.
