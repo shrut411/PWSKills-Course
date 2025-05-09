@@ -1,0 +1,34 @@
+
+**Q1. What is an ensemble technique in machine learning?**
+An ensemble technique combines predictions from multiple models to improve accuracy and robustness.
+
+**Q2. Why are ensemble techniques used in machine learning?**
+They reduce overfitting, variance, and bias, and improve prediction performance.
+
+**Q3. What is bagging?**
+Bagging (Bootstrap Aggregating) trains multiple models on random subsets of data and averages their predictions.
+
+**Q4. What is boosting?**
+Boosting trains models sequentially, each correcting the errors of the previous one, to build a strong overall model.
+
+**Q5. What are the benefits of using ensemble techniques?**
+Better accuracy, reduced overfitting, improved generalization, and robustness to noise.
+
+**Q6. Are ensemble techniques always better than individual models?**
+Not always; they work best when base models are diverse and weak learners.
+
+**Q7. How is the confidence interval calculated using bootstrap?**
+By resampling the data many times, computing the mean each time, and using percentiles (e.g., 2.5th and 97.5th) of the means for a 95% interval.
+
+**Q8. How does bootstrap work and what are the steps involved in bootstrap?**
+It works by resampling with replacement. Steps:
+
+1. Sample with replacement from original data
+2. Compute the statistic (e.g., mean)
+3. Repeat many times
+4. Use distribution of statistics to estimate confidence intervals.
+
+**Q9. Bootstrap 95% CI for mean height of trees (n=50, mean=15, SD=2):**
+Standard error = 2 / √50 ≈ 0.283
+Approximate 95% CI using normal approximation = 15 ± 1.96 × 0.283
+\= (14.45, 15.55) meters
