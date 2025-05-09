@@ -1,0 +1,31 @@
+
+**Q1. What is Random Forest Regressor?**
+An ensemble model that predicts continuous values by averaging results from multiple decision trees.
+
+**Q2. How does Random Forest Regressor reduce the risk of overfitting?**
+It reduces variance by averaging predictions from many trees trained on random subsets of data and features.
+
+**Q3. How does Random Forest Regressor aggregate the predictions of multiple decision trees?**
+By computing the mean of the predictions from all trees.
+
+**Q4. What are the hyperparameters of Random Forest Regressor?**
+Key ones include:
+
+* `n_estimators` (number of trees)
+* `max_depth` (tree depth)
+* `min_samples_split`
+* `min_samples_leaf`
+* `max_features`
+
+**Q5. What is the difference between Random Forest Regressor and Decision Tree Regressor?**
+Random Forest uses multiple trees and averages their outputs; Decision Tree uses only one tree.
+
+**Q6. What are the advantages and disadvantages of Random Forest Regressor?**
+*Advantages:* High accuracy, robust to overfitting, handles non-linear data.
+*Disadvantages:* Slower, less interpretable, more memory-intensive.
+
+**Q7. What is the output of Random Forest Regressor?**
+A continuous numerical value — the average of outputs from all trees.
+
+**Q8. Can Random Forest Regressor be used for classification tasks?**
+No, but Random Forest **Classifier** is used for classification. They are separate but similar models.
