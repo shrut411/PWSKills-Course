@@ -1,0 +1,20 @@
+
+**Q1. How does bagging reduce overfitting in decision trees?**
+By averaging multiple trees trained on different data subsets, bagging reduces variance and smooths out overfitting from any single tree.
+
+**Q2. What are the advantages and disadvantages of using different types of base learners in bagging?**
+*Advantages:* Can improve diversity and generalization.
+*Disadvantages:* May introduce inconsistent results or weaken ensemble strength if base learners are not well-suited.
+
+**Q3. How does the choice of base learner affect the bias–variance tradeoff in bagging?**
+Low-bias, high-variance learners (e.g., deep decision trees) benefit most; bagging reduces variance while keeping bias low.
+
+**Q4. Can bagging be used for both classification and regression tasks? How does it differ in each case?**
+Yes. For classification, final prediction is by majority vote; for regression, it’s by averaging predictions.
+
+**Q5. What is the role of ensemble size in bagging? How many models should be included in the ensemble?**
+Larger ensembles reduce variance more but increase computation. Typically, 50–100 models work well, but it depends on the dataset.
+
+**Q6. Can you provide an example of a real-world application of bagging in machine learning?**
+Random Forest, a bagging method with decision trees, is widely used in fraud detection, credit scoring, and medical diagnostics.
+
